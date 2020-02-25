@@ -48,3 +48,28 @@ body{
     background-color: white;
     color: white;
   }
+
+  .desk-nav{
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 10%;
+  }
+
+  .links-cont{
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+  }
+
+  .desk-nav a{
+      text-decoration: unset;
+  }
+
+  @media only screen and (min-width:700px){
+      .topnav{
+          display: none;
+      }
+
+      .desk-nav{display: flex;}
+  }
