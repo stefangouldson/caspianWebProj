@@ -6,7 +6,7 @@ body{
 /* Style the navigation menu */
 .topnav {
     overflow: hidden;
-    background-color: blue;
+    background-color: #06538B;
     position: sticky;
     top: 0;
   }
@@ -47,4 +47,27 @@ body{
   .active {
     background-color: white;
     color: white;
+  }
+
+  .desk-nav{
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 10%;
+  }
+
+  .links-cont{
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+  }
+
+  .desk-nav a{
+      text-decoration: unset;
+      font-size: 17px;
+  }
+
+  @media only screen and (min-width:700px){
+      .topnav{display: none;}
+      .desk-nav{display: flex;}
   }
