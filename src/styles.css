@@ -89,7 +89,7 @@ body{
   margin-top: 1em;
   margin-bottom: 0.5em;
   margin: 1%;
-  height: auto;
+  height: fit-content
 }
 
 .txt-box{
