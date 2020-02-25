@@ -64,10 +64,25 @@ body{
 
   .desk-nav a{
       text-decoration: unset;
-      font-size: 17px;
   }
-
+.img-box-container{
+  padding-right:  2.5%;
+  padding-left:  2.5%;
+  padding-top:  2%;
+  display: flex;
+  justify-content: space-around;
+} 
+.img-box{
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: solid 2px black;
+  width: 30%;
+  height: 20%;
+}
   @media only screen and (min-width:700px){
-      .topnav{display: none;}
+      .topnav{
+          display: none;
+      }
+
       .desk-nav{display: flex;}
   }
