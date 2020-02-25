@@ -81,7 +81,7 @@ body{
 .img-box{
   border: solid black 2px;
   width: 90%;
-  height: fit-content;
+  height: auto;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -89,7 +89,8 @@ body{
   margin-top: 1em;
   margin-bottom: 0.5em;
   margin: 1%;
-  height: fit-content
+  height: 13em;
+  padding: 1%;
 }
 
 .txt-box{
@@ -120,7 +121,4 @@ body{
         align-items: flex-start;
       }
 
-      .img-box{
-        height: 13em;
-      }
   }
