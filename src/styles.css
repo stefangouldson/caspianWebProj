@@ -12,6 +12,7 @@ body{
     background-color: #06538B;
     position: sticky;
     top: 0;
+    z-index: 100;
   }
   
   /* Hide the links inside the navigation menu (except for logo/home) */
@@ -33,7 +34,7 @@ body{
   }
   /* Style the hamburger menu */
   .topnav a.icon {
-    background: black;
+    background: #06538B;
     display: block;
     position: absolute;
     right: 0;
@@ -68,6 +69,45 @@ body{
   .desk-nav a{
       text-decoration: unset;
   }
+
+#home-page{
+  height: fit-content;
+  width: 100%;
+}
+
+#caption-box{
+  position: absolute;
+  padding: 1%;
+}
+
+h2{
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-shadow: black 0.5px 0.5px
+}
+
+.clients-box{
+  width: 100%;
+  text-align: center;
+  color: #06538B;
+}
+
+table{
+  padding: 1%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.logo{
+  width: 50%;
+  height: auto;
+}
+
+.logo2{
+  width: 32%;
+  height: auto;
+}
 
 .img-cont {
   display: flex;
@@ -112,6 +152,7 @@ body{
 
       .desk-nav{
         display: flex;
+        position: sticky;
       }
 
       .img-cont{
@@ -119,6 +160,12 @@ body{
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
+      }
+
+      h2{
+        color: #06538B;
+        font-size: 400%;
+        margin: 2px;
       }
 
   }
