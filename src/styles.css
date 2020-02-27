@@ -145,6 +145,14 @@ p{
   font-size: 70%;
   text-decoration: underline;
   margin-bottom: 1%;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.portfolio a {
+  color: white;
 }
 
 /** insurance page */
@@ -166,7 +174,7 @@ p{
 }
 
 .txt-box{
-  /* border: solid black 1px; */
+  border-bottom: solid black 1px;
   width: 90%;
   height: fit-content;
   overflow: auto;
