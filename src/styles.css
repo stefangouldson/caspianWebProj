@@ -126,7 +126,7 @@ p{
 .blue-box{
   background-color: #06538B;
   color: white;
-  padding: 1%;
+  padding: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -208,9 +208,10 @@ p{
       }
 
       h2{
-        color: #06538B;
+        color: white;
         font-size: 400%;
         margin: 2px;
+        text-shadow: black 2px 2px;
       }
 
       h3{
@@ -223,5 +224,9 @@ p{
 
       .portfolio{
         font-size: 100%;
+      }
+
+      .blue-box{
+        padding: 1%;
       }
   }
