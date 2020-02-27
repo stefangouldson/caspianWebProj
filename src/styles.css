@@ -85,7 +85,7 @@ body{
   width: 100%;
 }
 
-#caption-box{
+.caption-box{
   position: absolute;
   padding: 2%;
 }
@@ -123,7 +123,7 @@ p{
   margin: 0;
 }
 
-#contact-box{
+.blue-box{
   background-color: #06538B;
   color: white;
   padding: 1%;
@@ -152,37 +152,30 @@ p{
 .img-cont {
   display: flex;
   justify-content: space-between;
-  padding: 1%;
   flex-direction: column;
   align-items: center;
-  margin: 1%;
+  width: 100%;
 }
 
-.img-box{
-  border: solid black 2px;
-  width: 90%;
-  height: auto;
-  overflow: hidden;
+#txt-cont{
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  width: 100%;
   justify-content: center;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  margin: 1%;
-  height: 13em;
-  padding: 1%;
+  align-items: center;
 }
 
 .txt-box{
-  border: solid black 2px;
+  /* border: solid black 1px; */
   width: 90%;
   height: fit-content;
   overflow: auto;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  height: 13em;
-  padding: 1%;
-  margin: 1%;
+  height: 25em;
+  margin-bottom: 1%;
+}
+
+.sub-title{
+  color: #06538B;
 }
   @media only screen and (max-width:699px){
     .desk-nav{
