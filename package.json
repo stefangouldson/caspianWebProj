@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/stefangouldson/caspianWebProj/issues"
   },
-  "homepage": "https://github.com/stefangouldson/caspianWebProj#readme"
+  "homepage": "https://github.com/stefangouldson/caspianWebProj#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
 }
