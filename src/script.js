@@ -8,4 +8,39 @@ function myFunction() {
     }
   }
 
-  
+  //removes the small button from the the screen when first loaded
+  document.getElementById('small-btn').style.display="none"
+
+//function to increase the size of the text
+const enlarge = () =>{
+
+    document.getElementById('large-btn').style.display="none"
+    document.getElementById('small-btn').style.display="flex"
+    let arrP = document.getElementsByTagName("p")
+    let arrH3 = document.getElementsByTagName('h3')
+
+    for (i=0;i<arrP.length;i++){
+      arrP[i].classList.add('scaleUp')
+    }
+
+    for (i=0;i<arrH3.length;i++){
+      arrH3[i].classList.add('scaleUp')
+    }
+}
+
+//function to reduce the size of the text
+const reduce = () =>{
+
+  document.getElementById('large-btn').style.display="flex"
+  document.getElementById('small-btn').style.display="none"  
+  let arrP = document.getElementsByTagName("p")
+  let arrH3 = document.getElementsByTagName("h3")
+
+  for (i=0;i<arrP.length;i++){
+    arrP[i].classList.remove('scaleUp')
+  }
+
+  for (i=0;i<arrH3.length;i++){
+    arrH3[i].classList.remove('scaleUp')
+  }
+}

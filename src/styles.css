@@ -185,6 +185,24 @@ p{
 .sub-title{
   color: #06538B;
 }
+
+button{
+  background-color: white;
+  color: #06538B;
+  border: solid black 0.5px;
+  border-radius: 25px;
+  font-size: 100%;
+}
+
+button:hover {
+  background-color: #06538B;
+  color: white;
+}
+
+/* javascript styles */
+.scaleUp{
+  font-size: 200%;
+}
   @media only screen and (max-width:699px){
     .desk-nav{
       display: none;
@@ -228,5 +246,9 @@ p{
 
       .blue-box{
         padding: 1%;
+      }
+
+      .scaleUp{
+        font-size: 300%;
       }
   }
