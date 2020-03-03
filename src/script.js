@@ -18,6 +18,7 @@ const enlarge = () => {
   document.getElementById('small-btn').style.display = "flex"
   let arrP = document.getElementsByTagName("p")
   let arrH3 = document.getElementsByTagName('h3')
+  let arrBox = document.getElementsByClassName('txt-box')
 
   for (i = 0; i < arrP.length; i++) {
     arrP[i].classList.add('scaleUp')
@@ -25,6 +26,10 @@ const enlarge = () => {
 
   for (i = 0; i < arrH3.length; i++) {
     arrH3[i].classList.add('scaleUp')
+  }
+
+  for (i = 0; i < arrBox.length; i++) {
+    arrBox[i].classList.add('enlargeBox')
   }
 }
 
@@ -35,6 +40,7 @@ const reduce = () => {
   document.getElementById('small-btn').style.display = "none"
   let arrP = document.getElementsByTagName("p")
   let arrH3 = document.getElementsByTagName("h3")
+  let arrBox = document.getElementsByClassName('txt-box')
 
   for (i = 0; i < arrP.length; i++) {
     arrP[i].classList.remove('scaleUp')
@@ -42,5 +48,9 @@ const reduce = () => {
 
   for (i = 0; i < arrH3.length; i++) {
     arrH3[i].classList.remove('scaleUp')
+  }
+
+  for (i = 0; i < arrBox.length; i++) {
+    arrBox[i].classList.remove('enlargeBox')
   }
 }

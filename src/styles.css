@@ -203,6 +203,11 @@ button:hover {
 .scaleUp{
   font-size: 200%;
 }
+
+.enlargeBox{
+  height: 50em;
+}
+
   @media only screen and (max-width:699px){
     .desk-nav{
       display: none;
