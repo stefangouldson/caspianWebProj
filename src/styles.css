@@ -139,6 +139,7 @@ p{
   background-color: whitesmoke;
   border-radius: 80%;
   padding: 2%;
+  height: fit-content;
 }
 
 .portfolio{
