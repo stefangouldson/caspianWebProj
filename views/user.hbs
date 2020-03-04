@@ -20,9 +20,9 @@
     </a>
     <!-- Navigation links (hidden by default) -->
     <div id="myLinks">
-            <a href="/">Home</a>
-            <a href="/insurances">Insurance</a>
-            <a href="/user">User</a>
+      <a href="/">Home</a>
+      <a href="/insurances">Insurance</a>
+      <a href="/user">User</a>
     </div>
     <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
     <a href="javascript:void(0);" class="icon" style="display: flex; align-items: center;" onclick="myFunction()">
@@ -31,28 +31,41 @@
   </div>
 
   <div class="desk-nav">
-    <a href="./index.html" class="active">
+    <a href="/" class="active">
       <img src="https://caspianinsurance.co.uk/wp-content/themes/caspian-insurance/assets/img/logo.png" width="250"
         height="65" />
     </a>
     <div class="links-cont">
-            <a href="/">Home</a>
-            <a href="/insurances">Insurance</a>
-            <a href="/user">User</a>
+      <a href="/">Home</a>
+      <a href="/insurances">Insurance</a>
+      <a href="/user">User</a>
     </div>
   </div>
 
-
-  <div>
+  {{!-- <div id="testInfo">
+    <input id="idInput" type="number" placeholder="type id in here">
     <button onclick="gettingInfo()">Click me for data</button>
-    <p id="username">This should be replaced</p>
+    <p id="username"></p>
+  </div> --}}
+
+  <div id="welcome-user" class="user-cont">
+    <h3 class="sub-title">Welcome to the user page, you like to sign in or sign up?</h3>
+    <h3 class="sub-title">Sign In</h3>
+
+    <input id="username-input" type="text" placeholder="Enter your username">
+    <button class="user-btn" onclick="fetchDetails()">Login</button>
   </div>
-  
+
+  <div id="info-card">
+
+  </div>
+
 
   <div class="blue-box">
     <button id="large-btn" onclick="enlarge()">Click to enlarge text</button>
     <button id="small-btn" onclick="reduce()">Click to reduce size</button>
-    <p><br>User Page<br>&nbsp;</p>
+    <p><br>Everyone is different, and require different types of insurance. This page was constructed to help our
+      customers see their information and the packages they have or would we advise they have.<br>&nbsp;</p>
     <div id="footer-logo">
       <img src="https://caspianinsurance.co.uk/wp-content/themes/caspian-insurance/assets/img/footer-logo.png"
         width="80%" height="20%" />
@@ -64,7 +77,7 @@
     </div>
   </div>
 </body>
-<script src="./script.js"></script>
-<script src="./user.js"></script>
+<script src="/script.js"></script>
+<script src="/user.js"></script>
 
 </html>
