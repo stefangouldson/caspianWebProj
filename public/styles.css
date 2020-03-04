@@ -66,6 +66,7 @@ body{
       top: 0;
       background-color: white;
       z-index: 100;
+      color: #06538B;
   }
 
   .links-cont{
@@ -76,6 +77,10 @@ body{
 
   .desk-nav a{
       text-decoration: unset;
+  }
+
+  a:hover{
+    cursor: pointer;
   }
 
   /* Home page desktop */

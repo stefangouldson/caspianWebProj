@@ -54,3 +54,15 @@ const reduce = () => {
     arrBox[i].classList.remove('enlargeBox')
   }
 }
+
+const navHome = ()=>{
+  location.pathname="/"
+}
+
+const navInsur = () =>{
+  location.pathname="/insurance"
+}
+
+const navUser = ()=>{
+  location.pathname="/user"
+}
