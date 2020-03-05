@@ -5,7 +5,7 @@ const hbs = require('hbs');
 const app = express()
 const port = process.env.PORT || 4000
 
-const {displayDetails, getInfo} = require("./app")
+const { displayDetails } = require("./app")
 
 //tells express to use views file for display
 app.set('view engine', 'hbs');
@@ -22,29 +22,24 @@ app.get("/", (req, res) => {
     res.render("index", {});
 });
 
-app.get("/user", (req,res) => {
-    res.render("user",{});
+app.get("/user", (req, res) => {
+    res.render("user", {});
 })
 
-app.get("/insurances", (req,res) =>{
-    res.render("insurances",{})
+app.get("/insurances", (req, res) => {
+    res.render("insurances", {})
 })
 
 //*endpoints for database queries
 
-app.get("/info", async(req,res)=>{
-    const info = await getInfo(req.query.id);
-    res.send({username:info});
-})
-
-app.get("/details", async(req,res)=>{
+app.get("/details", async (req, res) => {
     const data = await displayDetails(req.query.username);
     res.send({
-        id:data.id,
-        username:data.username,
-        first_name:data.first_name,
-        last_name:data.last_name,
-        balance:data.balance
+        id: data.id,
+        username: data.username,
+        first_name: data.first_name,
+        last_name: data.last_name,
+        balance: data.balance
     })
 })
 
