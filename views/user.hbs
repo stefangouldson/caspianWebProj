@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="/styles.css" />
   <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  {{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
   <title>Caspian</title>
 </head>
 
@@ -42,13 +44,37 @@
     </div>
   </div>
 
+  <div id="signUp-cont">
+    <h5>Don't have an account?&nbsp;</h5>
+    <button id="myBtn">Sign Up</button>
+  </div>
+
   <div id="welcome-user" class="user-cont">
-    <h3 class="sub-title">Welcome to the user page, you like to sign in or sign up?</h3>
+    <h3 class="sub-title">Welcome to the user page, would you like to sign in?</h3>
     <h3 class="sub-title">Sign In</h3>
 
     <input id="username-input" type="text" placeholder="Enter your username">
     <button class="user-btn" onclick="fetchDetails()">Login</button>
   </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h4 class="sub-title">Registration Form</h4>
+      <form id="sign-up-form" action="/register" method="POST">
+        <input name="username" type="text" placeholder="Create Username" required>
+        <input name="first_name" type="text" placeholder="First Name" required>
+        <input name="last_name" type="text" placeholder="Surname" required>
+        <input name="balance" type="number" placeholder="Balance" required>
+        <input class="user-btn" value="Submit" id="register-btn" onclick="submitForm()">
+      </form>
+    </div>
+
+  </div>
+
 
   <div id="info-card">
 

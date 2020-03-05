@@ -27,8 +27,22 @@ const displayDetails = async (username) => {
     }
 }
 
-//displayDetails('StefanG')
+
+const addUser = async (newUser) => {
+    try {
+        const querystring = `INSERT INTO users (username, first_name, last_name, balance) VALUES ('${newUser.username}','${newUser.first_name}','${newUser.last_name}',${newUser.balance})`;
+        let data = await promisifiedQuery(querystring)
+        console.log('adding user')
+        return data
+    }
+    catch (error) {
+        console.log("this is an error");
+        console.log(error)
+    }
+}
+
 
 module.exports = {
     displayDetails,
+    addUser
 }
