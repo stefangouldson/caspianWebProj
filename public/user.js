@@ -62,7 +62,7 @@ const fetchDetails = async () => {
 
     insuranceContainer.style.display = "flex"
     fetchInsurance()
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
 
   }
 
@@ -118,12 +118,12 @@ const fetchInsurance = async () => {
     insurCard.appendChild(buy)
     buy.style.width = '10%'
 
-    buy.addEventListener('click',()=>{
+    buy.addEventListener('click', () => {
       let x = localStorage.getItem('user_balance')
       let y = buy.getAttribute("Cost")
 
-      if (x>y){alert('You can afford this')}
-      else {alert("You can't afford this")}
+      if (x > y) { alert('You can afford this') }
+      else { alert("You can't afford this") }
     })
   }
 

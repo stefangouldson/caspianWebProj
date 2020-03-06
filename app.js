@@ -17,7 +17,6 @@ const displayDetails = async (username) => {
         const querystring = `select * from users where username='${username}'`;
         let data = await promisifiedQuery(querystring)
         console.log('fetching user details')
-        console.log(data[0])
         return data[0]
     }
     catch (error) {
@@ -26,6 +25,8 @@ const displayDetails = async (username) => {
         return error
     }
 }
+
+//displayDetails('StefanG')
 
 
 const addUser = async (newUser) => {
@@ -46,7 +47,6 @@ const insurances = async () => {
         const querystring = `select * from insurances`;
         let data = await promisifiedQuery(querystring)
         console.log('fetching insurances');
-        console.table(data)
         return data
     }
 
@@ -56,7 +56,6 @@ const insurances = async () => {
     }
 }
 
-//insurances()
 
 const buy = async (insuranceID, userID) => {
     try{
