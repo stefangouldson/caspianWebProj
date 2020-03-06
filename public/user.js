@@ -42,7 +42,7 @@ const fetchDetails = async () => {
     document.getElementById('signUp-cont').style.display = "none"
     card.style.height = "fit-content"
 
-    localStorage.setItem('user_id', data.id)
+    localStorage.setItem('user_balance', data.balance)
 
     let userName = document.createElement('h4')
     userName.innerHTML = "Username: " + data.username
@@ -57,12 +57,12 @@ const fetchDetails = async () => {
     card.appendChild(lastName)
 
     let bal = document.createElement('h4')
-    bal.innerHTML = "Balance: " + data.balance
+    bal.innerHTML = "Balance: £" + data.balance
     card.appendChild(bal)
 
-    insuranceContainer.style.display="flex"
+    insuranceContainer.style.display = "flex"
     fetchInsurance()
-    document.body.querySelector("info-card").scrollIntoView()
+    window.scrollTo(0,0)
 
   }
 
@@ -84,23 +84,47 @@ const fetchInsurance = async () => {
   let data = await response.json()
   console.table(data)
 
-  for (i=0;i<data.length;i++){
+  let title = document.createElement('h4')
+  title.innerHTML = "Insurances"
+  insuranceContainer.appendChild(title)
+  title.classList.add('sub-title')
+  title.style.fontWeight = "bolder"
+  title.style.textDecoration = "underline"
 
-    let insurCard =  document.createElement('div')
+  for (i = 0; i < data.length; i++) {
+
+    let insurCard = document.createElement('div')
     insurCard.classList.add('insurCard')
     insuranceContainer.appendChild(insurCard)
 
     let name = document.createElement('h4')
-    name.innerHTML = "Name: "+data[i].name
+    name.innerHTML = "Name: " + data[i].name
     insurCard.appendChild(name)
+    name.style.width = '25%'
 
     let type = document.createElement('h4')
-    type.innerHTML = "Type: "+data[i].type
+    type.innerHTML = "Type: " + data[i].type
     insurCard.appendChild(type)
+    type.style.width = '25%'
 
     let cost = document.createElement('h4')
-    cost.innerHTML = "Cost: £"+data[i].cost
+    cost.innerHTML = "Cost: £" + data[i].cost
     insurCard.appendChild(cost)
+    cost.style.width = '25%'
+
+    let buy = document.createElement('button')
+    buy.innerHTML = "Buy"
+    buy.setAttribute("Cost", data[i].cost)
+    insurCard.appendChild(buy)
+    buy.style.width = '10%'
+
+    buy.addEventListener('click',()=>{
+      let x = localStorage.getItem('user_balance')
+      let y = buy.getAttribute("Cost")
+
+      if (x>y){alert('You can afford this')}
+      else {alert("You can't afford this")}
+    })
   }
 
 }

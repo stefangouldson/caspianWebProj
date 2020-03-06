@@ -325,11 +325,12 @@ form input{
 
 
 #insurance-cont{
+  font-size: 80%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  margin-bottom: 5vh;
 }
 
 .insurCard{
@@ -338,8 +339,12 @@ form input{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  text-align: start;
   color: #06538B;
+  border-bottom: #06538B solid 2px;
+}
+
+.inTxt{
+  text-align: start;
 }
 
 /* javascript styles */
@@ -412,5 +417,9 @@ form input{
 
       #info-card{
         font-size: 120%;
+      }
+
+      #insurance-cont{
+        font-size: 100%;
       }
   }

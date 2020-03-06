@@ -58,8 +58,23 @@ const insurances = async () => {
 
 //insurances()
 
+const buy = async (insuranceID, userID) => {
+    try{
+        const querystring = `something`
+        let data = await promisifiedQuery(querystring)
+        console.log(data)
+        return data
+    }
+
+    catch (error) {
+        console.log('buying error')
+        console.log(error)
+    }
+}
+
 module.exports = {
     displayDetails,
     addUser,
-    insurances
+    insurances,
+    buy
 }
