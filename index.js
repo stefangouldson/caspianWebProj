@@ -5,7 +5,7 @@ const hbs = require('hbs');
 const app = express()
 const port = process.env.PORT || 4000
 
-const { displayDetails, addUser } = require("./app")
+const { displayDetails, addUser, insurances } = require("./app")
 
 //tells express to use views file for display
 app.set('view engine', 'hbs');
@@ -56,6 +56,11 @@ app.post("/register", async (req, res) =>{
 
     const data = await addUser(newUser)
     console.log('user added')
+    res.send(data)
+})
+
+app.get("/fetchInsurances", async (req, res) =>{
+    const data = await insurances()
     res.send(data)
 })
 

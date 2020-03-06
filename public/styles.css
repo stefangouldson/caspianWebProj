@@ -256,13 +256,16 @@ input{
 
 #info-card{
   width: 100%;
-  /* height: 90vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #06538B;
   font-weight: bold;
+  font-size: 150%;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  text-align: center;
 }
 
 /* The Modal (background) */
@@ -318,6 +321,25 @@ form input{
 
 #register-btn{
   text-align: center;
+}
+
+
+#insurance-cont{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.insurCard{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+  color: #06538B;
 }
 
 /* javascript styles */
@@ -386,5 +408,9 @@ form input{
 
       .scaleUp{
         font-size: 300%;
+      }
+
+      #info-card{
+        font-size: 120%;
       }
   }

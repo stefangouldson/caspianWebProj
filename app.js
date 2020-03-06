@@ -36,13 +36,30 @@ const addUser = async (newUser) => {
         return data
     }
     catch (error) {
-        console.log("this is an error");
+        console.log("Add User Error");
         console.log(error)
     }
 }
 
+const insurances = async () => {
+    try {
+        const querystring = `select * from insurances`;
+        let data = await promisifiedQuery(querystring)
+        console.log('fetching insurances');
+        console.table(data)
+        return data
+    }
+
+    catch (error) {
+        console.log('insurances error')
+        console.log(error)
+    }
+}
+
+//insurances()
 
 module.exports = {
     displayDetails,
-    addUser
+    addUser,
+    insurances
 }
