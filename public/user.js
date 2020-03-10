@@ -35,7 +35,7 @@ let card = document.getElementById('info-card')
 
 const fetchDetails = async () => {
   localStorage.clear
-//alert("DEVELOPER NOTE: If nothing appears, this is likely due to the remote database being down as I have used a free version which deletes your database when it is inactive for a while")
+  //alert("DEVELOPER NOTE: If nothing appears, this is likely due to the remote database being down as I have used a free version which deletes your database when it is inactive for a while")
   let response = await fetch(`/details?username=${username.value}`)
   let data = await response.json()
   console.table(data)
@@ -68,7 +68,7 @@ const fetchDetails = async () => {
     if (data.name) {
 
       let ins = document.createElement('h4')
-      ins.setAttribute("id","insurType")
+      ins.setAttribute("id", "insurType")
       ins.innerHTML = "Current Insurance: " + data.name
       card.appendChild(ins)
 
@@ -149,18 +149,18 @@ const fetchInsurance = async () => {
     let insName = buy.getAttribute('name')
 
     buy.addEventListener('click', async () => {
-      console.log("UserBal is "+userBal)
-      console.log("btn bal is "+btnBal)
+      console.log("UserBal is " + userBal)
+      console.log("btn bal is " + btnBal)
 
-      if (userBal >= btnBal){
+      if (userBal >= btnBal) {
         console.log('buying from button')
-        let response = await fetch(`/buy?userID=${userID}&insuranceID=${btnID}`,{method:"POST"})
+        let response = await fetch(`/buy?userID=${userID}&insuranceID=${btnID}`, { method: "POST" })
         let data = await response
         console.log(data)
         let ins = document.getElementById('insurType')
         ins.innerHTML = "Current Insurance: " + insName
       }
-      else{alert("You can't afford this")}
+      else { alert("You can't afford this") }
     })
   }
 

@@ -45,13 +45,13 @@ app.get("/details", async (req, res) => {
     })
 })
 
-app.post("/register", async (req, res) =>{
+app.post("/register", async (req, res) => {
 
     let newUser = {
-        username:req.body.username,
-        first_name:req.body.first_name,
-        last_name:req.body.last_name,
-        balance:req.body.balance
+        username: req.body.username,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        balance: req.body.balance
     }
 
     console.log(newUser)
@@ -61,19 +61,19 @@ app.post("/register", async (req, res) =>{
     res.send(data)
 })
 
-app.get("/fetchInsurances", async (req, res) =>{
+app.get("/fetchInsurances", async (req, res) => {
     const data = await insurances()
     res.send(data)
 })
 
-app.post("/buy", async (req,res) =>{
+app.post("/buy", async (req, res) => {
     console.log('endpoint for buying')
     let ids = {
-        user_id:req.query.userID,
-        insurance_id:req.query.insuranceID
+        user_id: req.query.userID,
+        insurance_id: req.query.insuranceID
     }
 
-    const data = await buy(ids.insurance_id,ids.user_id)
+    const data = await buy(ids.insurance_id, ids.user_id)
     console.log(data)
     res.send(data)
 })

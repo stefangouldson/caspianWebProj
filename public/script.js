@@ -65,14 +65,14 @@ const reduce = () => {
   }
 }
 
-const navHome = ()=>{
-  location.pathname="/"
+const navHome = () => {
+  location.pathname = "/"
 }
 
-const navInsur = () =>{
-  location.pathname="/insurance"
+const navInsur = () => {
+  location.pathname = "/insurance"
 }
 
-const navUser = ()=>{
-  location.pathname="/user"
+const navUser = () => {
+  location.pathname = "/user"
 }
