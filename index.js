@@ -5,7 +5,7 @@ const hbs = require('hbs');
 const app = express()
 const port = process.env.PORT || 4000
 
-const { displayDetails, addUser, insurances } = require("./app")
+const { displayDetails, addUser, insurances, buy } = require("./app")
 
 //tells express to use views file for display
 app.set('view engine', 'hbs');
@@ -35,11 +35,13 @@ app.get("/insurances", (req, res) => {
 app.get("/details", async (req, res) => {
     const data = await displayDetails(req.query.username);
     res.send({
-        id: data.id,
+        user_id: data.user_id,
         username: data.username,
         first_name: data.first_name,
         last_name: data.last_name,
-        balance: data.balance
+        balance: data.balance,
+        insurance_id: data.insurance_id,
+        name: data.name
     })
 })
 
@@ -61,6 +63,18 @@ app.post("/register", async (req, res) =>{
 
 app.get("/fetchInsurances", async (req, res) =>{
     const data = await insurances()
+    res.send(data)
+})
+
+app.post("/buy", async (req,res) =>{
+    console.log('endpoint for buying')
+    let ids = {
+        user_id:req.query.userID,
+        insurance_id:req.query.insuranceID
+    }
+
+    const data = await buy(ids.insurance_id,ids.user_id)
+    console.log(data)
     res.send(data)
 })
 

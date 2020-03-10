@@ -28,10 +28,14 @@ window.onclick = function (event) {
 
 //* Client side functions
 
+
+
 let username = document.getElementById('username-input')
 let card = document.getElementById('info-card')
 
 const fetchDetails = async () => {
+  localStorage.clear
+//alert("DEVELOPER NOTE: If nothing appears, this is likely due to the remote database being down as I have used a free version which deletes your database when it is inactive for a while")
   let response = await fetch(`/details?username=${username.value}`)
   let data = await response.json()
   console.table(data)
@@ -43,6 +47,7 @@ const fetchDetails = async () => {
     card.style.height = "fit-content"
 
     localStorage.setItem('user_balance', data.balance)
+    localStorage.setItem('user_id', data.user_id)
 
     let userName = document.createElement('h4')
     userName.innerHTML = "Username: " + data.username
@@ -60,7 +65,23 @@ const fetchDetails = async () => {
     bal.innerHTML = "Balance: £" + data.balance
     card.appendChild(bal)
 
-    insuranceContainer.style.display = "flex"
+    if (data.name) {
+
+      let ins = document.createElement('h4')
+      ins.setAttribute("id","insurType")
+      ins.innerHTML = "Current Insurance: " + data.name
+      card.appendChild(ins)
+
+    }
+
+    else {
+      let ins = document.createElement('h4')
+      ins.innerHTML = "Current Insurance: Null"
+      card.appendChild(ins)
+    }
+
+    insuranceContainer.style.display = "flex";
+
     fetchInsurance()
     window.scrollTo(0, 0)
 
@@ -114,16 +135,32 @@ const fetchInsurance = async () => {
 
     let buy = document.createElement('button')
     buy.innerHTML = "Buy"
-    buy.setAttribute("Cost", data[i].cost)
     insurCard.appendChild(buy)
-    buy.style.width = '10%'
+    buy.style.width = '10%';
 
-    buy.addEventListener('click', () => {
-      let x = localStorage.getItem('user_balance')
-      let y = buy.getAttribute("Cost")
+    buy.setAttribute("btnCost", data[i].cost)
+    buy.setAttribute("btnID", data[i].id)
+    buy.setAttribute("name", data[i].name)
 
-      if (x > y) { alert('You can afford this') }
-      else { alert("You can't afford this") }
+    let btnID = buy.getAttribute('btnID')
+    let btnBal = parseInt(buy.getAttribute('btnCost'))
+    let userID = localStorage.getItem("user_id")
+    let userBal = parseInt(localStorage.getItem('user_balance'))
+    let insName = buy.getAttribute('name')
+
+    buy.addEventListener('click', async () => {
+      console.log("UserBal is "+userBal)
+      console.log("btn bal is "+btnBal)
+
+      if (userBal >= btnBal){
+        console.log('buying from button')
+        let response = await fetch(`/buy?userID=${userID}&insuranceID=${btnID}`,{method:"POST"})
+        let data = await response
+        console.log(data)
+        let ins = document.getElementById('insurType')
+        ins.innerHTML = "Current Insurance: " + insName
+      }
+      else{alert("You can't afford this")}
     })
   }
 

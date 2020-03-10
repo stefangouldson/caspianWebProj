@@ -14,9 +14,11 @@ const promisifiedQuery = promisify(connection.query).bind(connection)
 
 const displayDetails = async (username) => {
     try {
-        const querystring = `select * from users where username='${username}'`;
+        const querystring = `
+        select users.id AS user_id, username, first_name, last_name, balance, insurances.id AS insurance_id, name from users left join insurances on insurances.id = users.insurance_id where username = '${username}';`;
         let data = await promisifiedQuery(querystring)
         console.log('fetching user details')
+        console.log(data[0])
         return data[0]
     }
     catch (error) {
@@ -59,7 +61,7 @@ const insurances = async () => {
 
 const buy = async (insuranceID, userID) => {
     try{
-        const querystring = `something`
+        const querystring = `update users SET insurance_id = ${insuranceID} where id = ${userID};`
         let data = await promisifiedQuery(querystring)
         console.log(data)
         return data
@@ -70,6 +72,8 @@ const buy = async (insuranceID, userID) => {
         console.log(error)
     }
 }
+
+//buy(3,6)
 
 module.exports = {
     displayDetails,
