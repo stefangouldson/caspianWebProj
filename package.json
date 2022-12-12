@@ -18,7 +18,7 @@
   "homepage": "https://github.com/stefangouldson/caspianWebProj#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "hbs": "^4.1.0",
     "heroku": "^7.38.2",
     "mysql": "^2.18.1",
